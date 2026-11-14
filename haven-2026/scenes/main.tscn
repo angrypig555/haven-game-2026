@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://1w7rv6pggslt"]
 
+[ext_resource type="Script" uid="uid://7hgx141oqa4l" path="res://scripts/oobhandler.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://ceej0xbq7qsqx" path="res://scenes/player.tscn" id="1_o5qli"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rb6tl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgp6g"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -19,7 +22,20 @@ glow_enabled = true
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_sgp6g"]
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_cvopo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cvopo"]
+
 [node name="Node3D" type="Node3D" unique_id=245324232]
+
+[node name="oobhandler" type="Node3D" parent="." unique_id=958594210]
+script = ExtResource("1_0wfyh")
+
+[node name="Area3D" type="Area3D" parent="oobhandler" unique_id=33845]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="oobhandler/Area3D" unique_id=189878768]
+transform = Transform3D(39.473583, 0, 0, 0, 1, 0, 0, 0, 41.696857, 0, -5.292231, 0)
+shape = SubResource("BoxShape3D_rb6tl")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2063382571]
 environment = SubResource("Environment_0wfyh")
@@ -38,4 +54,15 @@ mesh = SubResource("PlaneMesh_esvqh")
 shape = SubResource("ConcavePolygonShape3D_sgp6g")
 
 [node name="CharacterBody3D" parent="." unique_id=1440422813 instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15719032, 1.6824393, -0.100655556)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15719032, 1.6824393, 9.362357)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1019868234]
+transform = Transform3D(-4.371139e-08, 0, -8.708884, 0, 1, 0, 1, 0, -3.8067742e-07, 0, 0, 0)
+mesh = SubResource("BoxMesh_cvopo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=1863078899]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=917622540]
+shape = SubResource("BoxShape3D_cvopo")
+
+[connection signal="body_shape_entered" from="oobhandler/Area3D" to="oobhandler" method="_on_area_3d_body_shape_entered"]
