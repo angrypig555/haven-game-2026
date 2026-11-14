@@ -37,5 +37,10 @@ wait_time = 0.5
 wait_time = 0.2
 one_shot = true
 
+[node name="Label" type="Label" parent="." unique_id=338265539]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Time: time here"
+
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashMoveTimer" to="." method="_on_dash_move_timer_timeout"]
