@@ -134,6 +134,10 @@ text = "Jump, then press shift midair to dash"
 transform = Transform3D(0.99999803, 0, 0.0019401014, 0, 1, 0, -0.0019401014, 0, 0.99999803, -2.82971, 1.3363063, -9.152144)
 text = "Grey objects can be pushed"
 
+[node name="Label3D8" type="Label3D" parent="Tutorial label" unique_id=904820996]
+transform = Transform3D(0.9784042, 0, 0.20670107, 0, 1, 0, -0.20670107, 0, 0.9784042, -3.184125, 1.0698454, -13.536593)
+text = "If grey objects fall off, the level resets to prevent a softlock"
+
 [node name="Label3D6" type="Label3D" parent="Tutorial label" unique_id=322230940]
 transform = Transform3D(0.8965944, 0, 0.44285265, 0, 1, 0, -0.44285265, 0, 0.8965944, -2.1731372, 0.65605116, -33.323402)
 text = "Step on the blue square to go to the next level"
