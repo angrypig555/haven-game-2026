@@ -24,7 +24,40 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_cvopo"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wfyh"]
+albedo_color = Color(1, 1, 0, 1)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_cvopo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_esvqh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sugp2"]
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="GDScript" id="GDScript_0wfyh"]
+script/source = "extends MeshInstance3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+	
+
+
+func _on_area_3d_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
+	print(\"next level\")
+"
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0wfyh"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_esvqh"]
 
 [node name="Node3D" type="Node3D" unique_id=245324232]
 
@@ -34,7 +67,7 @@ script = ExtResource("1_0wfyh")
 [node name="Area3D" type="Area3D" parent="oobhandler" unique_id=33845]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="oobhandler/Area3D" unique_id=189878768]
-transform = Transform3D(51.843594, 0, 0, 0, 1, 0, 0, 0, 68.77475, 0, -5.292231, 0)
+transform = Transform3D(51.843594, 0, 0, 0, 1, 0, 0, 0, 159.42442, 0, -5.292231, 0)
 shape = SubResource("BoxShape3D_rb6tl")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2063382571]
@@ -54,12 +87,23 @@ transform = Transform3D(0.50486755, 0, 0, 0, 25.6, 0, 0, 0, 0.49983266, 0, 0, 1.
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1760686558]
 shape = SubResource("ConcavePolygonShape3D_sgp6g")
 
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1783715866]
+transform = Transform3D(10.769037, 0, 0, 0, 0.09406763, 0, 0, 0, 11.758159, 0, -0.50518763, -28.907654)
+mesh = SubResource("BoxMesh_sugp2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3" unique_id=1110769410]
+transform = Transform3D(0.50486755, 0, 0, 0, 25.6, 0, 0, 0, 0.49983266, 0, 0, 1.4988282e-05)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D" unique_id=113331665]
+shape = SubResource("ConcavePolygonShape3D_sgp6g")
+
 [node name="CharacterBody3D" parent="." unique_id=1440422813 instance=ExtResource("1_o5qli")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15719032, 0.4004252, 9.362357)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1019868234]
-transform = Transform3D(-4.371139e-08, 0, -8.708884, 0, 1, 0, 1, 0, -3.8067742e-07, 0, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, -11.171854, 0, 1, 0, 1, 0, -4.8833726e-07, -0.014138699, -4.7683716e-07, 0.013844013)
 mesh = SubResource("BoxMesh_cvopo")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wfyh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=1863078899]
 
@@ -80,4 +124,34 @@ text = "Use your mouse to turn around"
 transform = Transform3D(0.99999803, 0, 0.0019401014, 0, 1, 0, -0.0019401014, 0, 0.99999803, -0.5505781, 1.6182942, 1.0038371)
 text = "Press space to jump"
 
+[node name="Label3D4" type="Label3D" parent="Tutorial label" unique_id=1367207102]
+transform = Transform3D(0.99999803, 0, 0.0019401014, 0, 1, 0, -0.0019401014, 0, 0.99999803, -0.5505781, 1.6182942, -14.812931)
+text = "Jump, then press shift midair to dash"
+
+[node name="Label3D6" type="Label3D" parent="Tutorial label" unique_id=322230940]
+transform = Transform3D(0.8965944, 0, 0.44285265, 0, 1, 0, -0.44285265, 0, 0.8965944, -2.1731372, 0.65605116, -33.323402)
+text = "Step on the blue square to go to the next level"
+
+[node name="Label3D5" type="Label3D" parent="Tutorial label" unique_id=1290328341]
+transform = Transform3D(0.96769434, 0, -0.2521264, 0, 1, 0, 0.2521264, 0, 0.96769434, 2.37064, 0.5162761, -33.78968)
+text = "This is a hard game, if you fail bounce back, be resilient"
+
+[node name="NextLevel" type="MeshInstance3D" parent="." unique_id=2120684294]
+transform = Transform3D(1.1958228, 0, 0, 0, 0.09672002, 0, 0, 0, 1.027231, -0.2546065, -0.3777079, -33.84876)
+mesh = SubResource("BoxMesh_esvqh")
+surface_material_override/0 = SubResource("StandardMaterial3D_sugp2")
+script = SubResource("GDScript_0wfyh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NextLevel" unique_id=2079245407]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NextLevel/StaticBody3D" unique_id=404202614]
+shape = SubResource("ConcavePolygonShape3D_0wfyh")
+
+[node name="Area3D" type="Area3D" parent="NextLevel" unique_id=422806814]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NextLevel/Area3D" unique_id=964656681]
+transform = Transform3D(0.99999976, 0, 0, 0, 6.8407617, 0, 0, 0, 0.9999996, 0, 6.591281, 0)
+shape = SubResource("BoxShape3D_esvqh")
+
 [connection signal="body_shape_entered" from="oobhandler/Area3D" to="oobhandler" method="_on_area_3d_body_shape_entered"]
+[connection signal="body_shape_entered" from="NextLevel/Area3D" to="NextLevel" method="_on_area_3d_body_shape_entered"]

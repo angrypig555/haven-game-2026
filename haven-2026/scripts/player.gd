@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 		print("dash")
 		Dash.start()
 		is_dash_timedout = true
-		SPEED += 10
+		SPEED += 20
 		DashMove.start()
 		print("dash applied")
 		
