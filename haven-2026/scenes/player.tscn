@@ -19,3 +19,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49391577, 0)
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Neck" unique_id=2050695388]
 stream = ExtResource("2_g2els")
 autoplay = true
+
+[node name="DashTimer" type="Timer" parent="." unique_id=2032418880]
+wait_time = 0.5
+
+[connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
