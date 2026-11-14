@@ -45,7 +45,8 @@ func _physics_process(delta: float) -> void:
 		SPEED += 20
 		DashMove.start()
 		print("dash applied")
-		
+	if Input.is_action_just_pressed("reset"):
+		get_tree().reload_current_scene()
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
