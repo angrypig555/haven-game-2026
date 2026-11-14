@@ -71,7 +71,7 @@ transform = Transform3D(51.843594, 0, 0, 0, 1, 0, 0, 0, 159.42442, 0, -5.292231,
 shape = SubResource("BoxShape3D_qyetb")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1381218997]
-transform = Transform3D(2.8278236, 0, 0, 0, 0.86614794, -2.5972564, 0, 0.49978775, 4.5011287, 0, 0, -8.968608)
+transform = Transform3D(2.8278236, 0, 0, 0, 0.86614794, -2.5972564, 0, 0.49978775, 4.5011287, 0, 0.5379257, -9.984983)
 mesh = SubResource("PlaneMesh_yesqi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=1620156958]
