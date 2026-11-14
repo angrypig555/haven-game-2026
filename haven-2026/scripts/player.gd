@@ -15,8 +15,10 @@ var time = 0
 @onready var JumpAudio = $Neck/Jump_sfx
 @onready var TimeDisplay = $Label
 @onready var Winlabel = $Winlabel
+@onready var spawn_sfx = $Neck/Spawn_sfx
 func _ready() -> void:
 	Winlabel.visible = false
+	spawn_sfx.play()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
