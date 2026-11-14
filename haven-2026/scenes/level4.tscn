@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c2u2n03r4wo6v"]
 
-[ext_resource type="PackedScene" uid="uid://ceej0xbq7qsqx" path="res://scenes/player.tscn" id="1_7ln0b"]
-[ext_resource type="PackedScene" uid="uid://pxuus3v22yxr" path="res://scenes/box.tscn" id="2_gmhuy"]
+[ext_resource type="PackedScene" uid="uid://ceej0xbq7qsqx" path="res://scenes/player.tscn" id="1_nsmo0"]
+[ext_resource type="PackedScene" uid="uid://pxuus3v22yxr" path="res://scenes/box.tscn" id="2_8y2od"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g1tnb"]
 
@@ -81,7 +81,7 @@ glow_enabled = true
 [node name="Node3D" type="Node3D" unique_id=269122156]
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1307644259]
-transform = Transform3D(2.8278234, 0, 0, 0, 1, 0, 0, 0, 5.1967196, 0, 5.799674, -23.548529)
+transform = Transform3D(2.8278234, 0, 0, 0, 1, 0, 0, 0, 5.1967196, 0, 6.0803328, -24.783436)
 mesh = SubResource("PlaneMesh_g1tnb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3" unique_id=329361014]
@@ -99,10 +99,10 @@ script = SubResource("GDScript_bp1i4")
 transform = Transform3D(51.843594, 0, 0, 0, 1, 0, 0, 0, 159.42442, 0, -5.292231, 0)
 shape = SubResource("BoxShape3D_bvvno")
 
-[node name="CharacterBody3D" parent="." unique_id=1440422813 instance=ExtResource("1_7ln0b")]
+[node name="CharacterBody3D" parent="." unique_id=1440422813 instance=ExtResource("1_nsmo0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.912001, 0)
 
-[node name="Box" parent="." unique_id=1108091245 instance=ExtResource("2_gmhuy")]
+[node name="Box" parent="." unique_id=1108091245 instance=ExtResource("2_8y2od")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.568073, -5.425291)
 mass = 2.5
 
@@ -131,8 +131,19 @@ transform = Transform3D(0.50486755, 0, 0, 0, 25.6, 0, 0, 0, 0.49983266, 0, 0, 1.
 transform = Transform3D(1.956344, 0, 0, 0, -0.03909265, 0, 0, 0, 1.8892452, 0, 0, 0)
 shape = SubResource("BoxShape3D_7ln0b")
 
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="." unique_id=597764084]
+transform = Transform3D(17.05706, 0, 0, 0, 2.4396484, 0, 0, 0, 2.049577, 0, 0.7511605, -17.059486)
+mesh = SubResource("BoxMesh_b4lsh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D12" unique_id=1211104410]
+transform = Transform3D(0.50486755, 0, 0, 0, 25.6, 0, 0, 0, 0.49983266, 0, 0, 1.4988282e-05)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D12/StaticBody3D" unique_id=856928371]
+transform = Transform3D(1.956344, 0, 0, 0, -0.03909265, 0, 0, 0, 1.8892452, 0, 0, 0)
+shape = SubResource("BoxShape3D_7ln0b")
+
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=840024817]
-transform = Transform3D(17.05706, 0, 0, 0, 2.4396484, 0, 0, 0, 2.049577, 0, 2.704238, -17.61392)
+transform = Transform3D(17.05706, 0, 0, 0, 2.4396484, 0, 0, 0, 2.049577, 0, 2.704238, -18.904125)
 mesh = SubResource("BoxMesh_b4lsh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D8" unique_id=1108275190]
@@ -143,7 +154,7 @@ transform = Transform3D(1.956344, 0, 0, 0, -0.03909265, 0, 0, 0, 1.8892452, 0, 0
 shape = SubResource("BoxShape3D_7ln0b")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="." unique_id=1617233352]
-transform = Transform3D(17.05706, 0, 0, 0, 2.4396484, 0, 0, 0, 2.049577, -3.600447, 4.8391175, -17.61392)
+transform = Transform3D(17.05706, 0, 0, 0, 2.4396484, 0, 0, 0, 2.049577, -3.600447, 4.8391175, -18.956764)
 mesh = SubResource("BoxMesh_b4lsh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D11" unique_id=626673044]
@@ -154,7 +165,7 @@ transform = Transform3D(1.956344, 0, 0, 0, -0.03909265, 0, 0, 0, 1.8892452, 0, 0
 shape = SubResource("BoxShape3D_7ln0b")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1176778096]
-transform = Transform3D(-1.4512855e-07, -0.01692594, -7.421078, 2.6118501e-08, 0.054610565, -2.3000793, 3.3734937, -1.1509683e-09, -3.0144892e-07, -1.7264829, 0.8004781, -13.428516)
+transform = Transform3D(-1.4512855e-07, -0.01692594, -7.421078, 2.6118501e-08, 0.054610565, -2.3000793, 3.3734937, -1.1509683e-09, -3.0144892e-07, -1.7264829, 0.7082344, -13.428516)
 mesh = SubResource("BoxMesh_b4lsh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D5" unique_id=778188458]
