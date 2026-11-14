@@ -1,12 +1,13 @@
 extends CharacterBody3D
 
 
-
-const SPEED = 5.0
+const SPEED_ORIGINAL = 5.0
+var SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
 @onready var Neck = $Neck
 @onready var Dash = $DashTimer
+@onready var DashMove = $DashMoveTimer
 var is_dash_timedout = false
 
 func _ready() -> void:
@@ -35,6 +36,9 @@ func _physics_process(delta: float) -> void:
 		print("dash")
 		Dash.start()
 		is_dash_timedout = true
+		SPEED += 10
+		DashMove.start()
+		print("dash applied")
 		
 		
 	# Get the input direction and handle the movement/deceleration.
@@ -55,3 +59,8 @@ func _on_dash_timer_timeout() -> void:
 	is_dash_timedout = false
 	print("dash timeout over")
 	Dash.stop()
+
+
+func _on_dash_move_timer_timeout() -> void:
+	SPEED = SPEED_ORIGINAL
+	print("boost removed")
