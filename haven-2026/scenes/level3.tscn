@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://gli1i8iewvyu"]
 
+[ext_resource type="Material" uid="uid://dqb2m2v7xxvnw" path="res://assets/tile.tres" id="1_7uttt"]
 [ext_resource type="PackedScene" uid="uid://ceej0xbq7qsqx" path="res://scenes/player.tscn" id="1_f0ip2"]
 [ext_resource type="PackedScene" uid="uid://pxuus3v22yxr" path="res://scenes/box.tscn" id="2_yesqi"]
+[ext_resource type="Material" uid="uid://tbgxcdkyf5h" path="res://assets/tile_yellow.tres" id="4_6lxtr"]
+[ext_resource type="Material" uid="uid://j57ubpk5em3k" path="res://assets/tile_blue.tres" id="5_b72m1"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_yesqi"]
 
@@ -80,6 +83,7 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=484436374]
 transform = Transform3D(2.8278234, 0, 0, 0, 1, 0, 0, 0, 5.1967196, 0, 0, -36.672905)
+material_override = ExtResource("1_7uttt")
 mesh = SubResource("PlaneMesh_yesqi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3" unique_id=1585739439]
@@ -112,6 +116,7 @@ shadow_enabled = true
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=977215769]
 transform = Transform3D(7.103637, 0, 0, 0, 0.09406763, 0, 0, 0, 31.040298, 0, -0.50518763, 0)
+material_override = ExtResource("1_7uttt")
 mesh = SubResource("BoxMesh_yesqi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4" unique_id=2102094536]
@@ -122,6 +127,7 @@ shape = SubResource("ConcavePolygonShape3D_jyq2n")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=2118370578]
 transform = Transform3D(6.908616, 0, 0, 0, 0.08349773, -5.873849, 0, 0.04332261, 11.320952, 0, 0.30731618, -8.902872)
+material_override = ExtResource("4_6lxtr")
 mesh = SubResource("BoxMesh_yesqi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D5" unique_id=1083738822]
@@ -132,6 +138,7 @@ shape = SubResource("ConcavePolygonShape3D_jyq2n")
 
 [node name="NextLevel" type="MeshInstance3D" parent="." unique_id=2021982602]
 transform = Transform3D(6.3554497, 0, 0, 0, 0.09672002, 0, 0, 0, 1.027231, 0.066226244, -0.034507513, -38.04465)
+material_override = ExtResource("5_b72m1")
 mesh = SubResource("BoxMesh_qyetb")
 surface_material_override/0 = SubResource("StandardMaterial3D_jyq2n")
 script = SubResource("GDScript_7uttt")
