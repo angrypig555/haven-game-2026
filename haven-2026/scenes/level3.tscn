@@ -111,7 +111,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=977215769]
-transform = Transform3D(10.769037, 0, 0, 0, 0.09406763, 0, 0, 0, 31.040298, 0, -0.50518763, 0)
+transform = Transform3D(7.103637, 0, 0, 0, 0.09406763, 0, 0, 0, 31.040298, 0, -0.50518763, 0)
 mesh = SubResource("BoxMesh_yesqi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4" unique_id=2102094536]
@@ -146,6 +146,10 @@ shape = SubResource("ConcavePolygonShape3D_6lxtr")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NextLevel/Area3D" unique_id=1570326419]
 transform = Transform3D(0.99999976, 0, 0, 0, 1.7420572, 0, 0, 0, 0.9999991, 0, 1.6223989, 0)
 shape = SubResource("BoxShape3D_b72m1")
+
+[node name="Label3D5" type="Label3D" parent="NextLevel/Area3D/CollisionShape3D" unique_id=444992102]
+transform = Transform3D(0.2670027, 0, -0.25660634, 0, 8.031205, 0, 0.0695658, 0, 0.9848884, 0.029547974, 6.945981, 32.838825)
+text = "Tip: spam the dash"
 
 [connection signal="body_shape_entered" from="MeshInstance3D3/oobhandler/Area3D" to="MeshInstance3D3/oobhandler" method="_on_area_3d_body_shape_entered"]
 [connection signal="body_shape_entered" from="NextLevel/Area3D" to="NextLevel" method="_on_area_3d_body_shape_entered"]
