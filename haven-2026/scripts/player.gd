@@ -10,6 +10,9 @@ const JUMP_VELOCITY = 4.5
 @onready var DashMove = $DashMoveTimer
 var is_dash_timedout = false
 
+@onready var DashAudio = $Neck/Dash_sfx
+@onready var JumpAudio = $Neck/Jump_sfx
+
 func _ready() -> void:
 	pass
 
@@ -32,9 +35,11 @@ func _physics_process(delta: float) -> void:
 	# Handle jump."floor_block_on_wall"
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		JumpAudio.play()
 	if Input.is_action_just_pressed("dash") and is_dash_timedout == false:
 		print("dash")
 		Dash.start()
+		DashAudio.play()
 		is_dash_timedout = true
 		SPEED += 20
 		DashMove.start()
