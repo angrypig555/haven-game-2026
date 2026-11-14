@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cf7f5o0e7xjsu"]
 
 [ext_resource type="PackedScene" uid="uid://ceej0xbq7qsqx" path="res://scenes/player.tscn" id="1_g2h75"]
+[ext_resource type="Material" uid="uid://dqb2m2v7xxvnw" path="res://assets/tile.tres" id="1_m7ahb"]
 [ext_resource type="PackedScene" uid="uid://pxuus3v22yxr" path="res://scenes/box.tscn" id="2_wwpf4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wwpf4"]
@@ -88,6 +89,7 @@ shadow_enabled = true
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=151498026]
 transform = Transform3D(2.8278234, 0, 0, 0, 1, 0, 0, 0, 5.1967196, 0, 0, -4.0545053)
 mesh = SubResource("PlaneMesh_esvqh")
+surface_material_override/0 = ExtResource("1_m7ahb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=2105165707]
 
@@ -96,6 +98,7 @@ shape = SubResource("ConcavePolygonShape3D_ru4tf")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=417020113]
 transform = Transform3D(2.6849544, 0, -1.6309164, 0, 1, 0, 0.88747203, 0, 4.934168, 0, -1.1950533, -15.867606)
+material_override = ExtResource("1_m7ahb")
 mesh = SubResource("PlaneMesh_esvqh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=1700770740]
@@ -105,6 +108,7 @@ shape = SubResource("ConcavePolygonShape3D_ru4tf")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1054325344]
 transform = Transform3D(2.70948, 0, 1.4876434, 0, 1, 0, -0.8095092, 0, 4.9792385, 0, -0.16623425, -26.821037)
+material_override = ExtResource("1_m7ahb")
 mesh = SubResource("PlaneMesh_esvqh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3" unique_id=303244295]
@@ -114,6 +118,7 @@ shape = SubResource("ConcavePolygonShape3D_ru4tf")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=396049749]
 transform = Transform3D(2.8276718, 0, -0.053882003, -0.0095157735, 0.9458703, -1.6864785, 0.027733257, 0.3245449, 4.915159, 0, -0.16623425, -37.270523)
+material_override = ExtResource("1_m7ahb")
 mesh = SubResource("PlaneMesh_esvqh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4" unique_id=179371278]
@@ -123,6 +128,7 @@ shape = SubResource("ConcavePolygonShape3D_ru4tf")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1444355449]
 transform = Transform3D(2.8278239, 0, 0, 0, 1, 0, 0, 0, 5.1967206, 0.016187608, 1.5807962, -47.398167)
+material_override = ExtResource("1_m7ahb")
 mesh = SubResource("PlaneMesh_esvqh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D5" unique_id=869383180]
@@ -132,6 +138,7 @@ shape = SubResource("ConcavePolygonShape3D_ru4tf")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=1203762219]
 transform = Transform3D(2.8278239, 0, 0, 0, 1, 0, 0, 0, 5.1967206, 0, 3.442284, -58.720863)
+material_override = ExtResource("1_m7ahb")
 mesh = SubResource("PlaneMesh_esvqh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D7" unique_id=506155758]
@@ -144,6 +151,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06494886, 0.62103945, -0.0
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=934642685]
 transform = Transform3D(5.730708, 0, 0, 0, 2.690867, 0, 0, 0, 1, 0, 2.1152995, -53.105373)
+material_override = ExtResource("1_m7ahb")
 mesh = SubResource("BoxMesh_esvqh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D6" unique_id=2042806723]

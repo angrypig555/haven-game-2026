@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bf55w5txy8n8k"]
+
+[ext_resource type="PackedScene" uid="uid://ceej0xbq7qsqx" path="res://scenes/player.tscn" id="1_m0d1t"]
+[ext_resource type="Texture2D" uid="uid://ccbvh48swjru6" path="res://assets/tile.png" id="2_ms1t0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ms1t0"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_jfeem"]
+sky_material = SubResource("ProceduralSkyMaterial_ms1t0")
+
+[sub_resource type="Environment" id="Environment_jil2c"]
+background_mode = 2
+sky = SubResource("Sky_jfeem")
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_nsmo0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8s0yo"]
+albedo_texture = ExtResource("2_ms1t0")
+uv1_triplanar = true
+uv1_world_triplanar = true
+texture_filter = 0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8y2od"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="Level4" type="Node3D" unique_id=40424345]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=963361267]
+environment = SubResource("Environment_jil2c")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=858624295]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CharacterBody3D" parent="." unique_id=1440422813 instance=ExtResource("1_m0d1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023244381, 0.9395528, 0.00044894218)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1043960777]
+transform = Transform3D(10.769037, 0, 0, 0, 0.09406763, 0, 0, 0, 31.040298, 0, -0.50518763, -14.257935)
+mesh = SubResource("BoxMesh_nsmo0")
+surface_material_override/0 = SubResource("StandardMaterial3D_8s0yo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=108810719]
+transform = Transform3D(0.50486755, 0, 0, 0, 25.6, 0, 0, 0, 0.49983266, 0, 0, 1.4988282e-05)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=783976941]
+shape = SubResource("ConcavePolygonShape3D_8y2od")

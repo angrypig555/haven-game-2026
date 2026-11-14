@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_area_3d_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
-	player.transform.origin = Vector3(-0.15, 1.682, 9.362)
+	get_tree().reload_current_scene()
