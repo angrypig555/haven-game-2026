@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://7hgx141oqa4l" path="res://scripts/oobhandler.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://ceej0xbq7qsqx" path="res://scenes/player.tscn" id="1_o5qli"]
-[ext_resource type="AudioStream" uid="uid://c0age1obblyba" path="res://sounds/Frozen.mp3" id="3_sugp2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rb6tl"]
 
@@ -67,8 +66,18 @@ mesh = SubResource("BoxMesh_cvopo")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=917622540]
 shape = SubResource("BoxShape3D_cvopo")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1478546427]
-stream = ExtResource("3_sugp2")
-autoplay = true
+[node name="Tutorial labl" type="Node3D" parent="." unique_id=1808273827]
+
+[node name="Label3D" type="Label3D" parent="Tutorial labl" unique_id=637670506]
+transform = Transform3D(-0.009587423, 0, 0.99995404, 0, 1, 0, -0.99995404, 0, -0.009587423, -4.991428, 1.6182942, 10.159071)
+text = "Use WASD or arrow keys to move"
+
+[node name="Label3D2" type="Label3D" parent="Tutorial labl" unique_id=907538905]
+transform = Transform3D(0.99999803, 0, 0.0019401014, 0, 1, 0, -0.0019401014, 0, 0.99999803, -0.5505781, 1.6182942, 6.6655045)
+text = "Use your mouse to turn around"
+
+[node name="Label3D3" type="Label3D" parent="Tutorial labl" unique_id=1589701779]
+transform = Transform3D(0.99999803, 0, 0.0019401014, 0, 1, 0, -0.0019401014, 0, 0.99999803, -0.5505781, 1.6182942, 1.0038371)
+text = "Press space to jump"
 
 [connection signal="body_shape_entered" from="oobhandler/Area3D" to="oobhandler" method="_on_area_3d_body_shape_entered"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ceej0xbq7qsqx"]
 
 [ext_resource type="Script" uid="uid://cxro7qponxnbu" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="AudioStream" uid="uid://c0age1obblyba" path="res://sounds/Frozen.mp3" id="2_g2els"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_esvqh"]
 
@@ -14,3 +15,7 @@ shape = SubResource("CapsuleShape3D_esvqh")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49391577, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck" unique_id=1177943138]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Neck" unique_id=2050695388]
+stream = ExtResource("2_g2els")
+autoplay = true
