@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://pxuus3v22yxr"]
 
-[ext_resource type="Material" uid="uid://bn37f0c6gfivi" path="res://assets/tile_dark.tres" id="1_3inec"]
+[ext_resource type="Material" uid="uid://cgw53b6vfwyby" path="res://assets/tile_pink.tres" id="1_3inec"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_esvqh"]
 

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ceej0xbq7qsqx" path="res://scenes/player.tscn" id="1_g2h75"]
 [ext_resource type="Material" uid="uid://dqb2m2v7xxvnw" path="res://assets/tile.tres" id="1_m7ahb"]
 [ext_resource type="PackedScene" uid="uid://pxuus3v22yxr" path="res://scenes/box.tscn" id="2_wwpf4"]
+[ext_resource type="Material" uid="uid://j57ubpk5em3k" path="res://assets/tile_blue.tres" id="4_dwgg1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wwpf4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -174,6 +175,7 @@ shape = SubResource("BoxShape3D_rb6tl")
 
 [node name="NextLevel" type="MeshInstance3D" parent="." unique_id=458711372]
 transform = Transform3D(1.1958228, 0, 0, 0, 0.09672002, 0, 0, 0, 1.027231, -0.2546065, 3.4692192, -62.657276)
+material_override = ExtResource("4_dwgg1")
 mesh = SubResource("BoxMesh_wwpf4")
 surface_material_override/0 = SubResource("StandardMaterial3D_m7ahb")
 script = SubResource("GDScript_ru4tf")

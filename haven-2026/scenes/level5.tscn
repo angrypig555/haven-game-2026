@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bf55w5txy8n8k"]
 
 [ext_resource type="PackedScene" uid="uid://ceej0xbq7qsqx" path="res://scenes/player.tscn" id="1_m0d1t"]
+[ext_resource type="Material" uid="uid://dqb2m2v7xxvnw" path="res://assets/tile.tres" id="2_jfeem"]
 [ext_resource type="Texture2D" uid="uid://ccbvh48swjru6" path="res://assets/tile.png" id="2_ms1t0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ms1t0"]
@@ -40,6 +41,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023244381, 0.9395528, 0.00
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1043960777]
 transform = Transform3D(10.769037, 0, 0, 0, 0.09406763, 0, 0, 0, 31.040298, 0, -0.50518763, -14.257935)
+material_override = ExtResource("2_jfeem")
 mesh = SubResource("BoxMesh_nsmo0")
 surface_material_override/0 = SubResource("StandardMaterial3D_8s0yo")
 

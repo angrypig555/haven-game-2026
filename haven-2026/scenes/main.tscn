@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://ccbvh48swjru6" path="res://assets/tile.png" id="2_jyhfs"]
 [ext_resource type="Material" uid="uid://dqb2m2v7xxvnw" path="res://assets/tile.tres" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://pxuus3v22yxr" path="res://scenes/box.tscn" id="3_sugp2"]
+[ext_resource type="Material" uid="uid://tbgxcdkyf5h" path="res://assets/tile_yellow.tres" id="5_tefeu"]
+[ext_resource type="Material" uid="uid://j57ubpk5em3k" path="res://assets/tile_blue.tres" id="6_o6xl0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rb6tl"]
 
@@ -122,6 +124,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15719032, 0.4004252, 9.362
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1019868234]
 transform = Transform3D(-4.371139e-08, 0, -11.171854, 0, 1, 0, 1, 0, -4.8833726e-07, -0.014138699, -4.7683716e-07, 0.013844013)
+material_override = ExtResource("5_tefeu")
 mesh = SubResource("BoxMesh_cvopo")
 surface_material_override/0 = SubResource("StandardMaterial3D_0wfyh")
 
@@ -140,6 +143,10 @@ text = "Use WASD or arrow keys to move"
 transform = Transform3D(0.99999803, 0, 0.0019401014, 0, 1, 0, -0.0019401014, 0, 0.99999803, -0.5505781, 1.6182942, 6.6655045)
 text = "Use your mouse to turn around"
 
+[node name="Label3D9" type="Label3D" parent="Tutorial label" unique_id=501071981]
+transform = Transform3D(0.99999803, 0, 0.0019401014, 0, 1, 0, -0.0019401014, 0, 0.99999803, 2.6682901, 1.6182942, -0.3794899)
+text = "Tip: Objects to jump on or over are marked yellow"
+
 [node name="Label3D3" type="Label3D" parent="Tutorial label" unique_id=1589701779]
 transform = Transform3D(0.99999803, 0, 0.0019401014, 0, 1, 0, -0.0019401014, 0, 0.99999803, -0.5505781, 1.6182942, 1.0038371)
 text = "Press space to jump"
@@ -150,11 +157,11 @@ text = "Jump, then press shift midair to dash"
 
 [node name="Label3D7" type="Label3D" parent="Tutorial label" unique_id=973055449]
 transform = Transform3D(0.99999803, 0, 0.0019401014, 0, 1, 0, -0.0019401014, 0, 0.99999803, -2.82971, 1.3363063, -9.152144)
-text = "Grey objects can be pushed"
+text = "Pink objects can be pushed"
 
 [node name="Label3D8" type="Label3D" parent="Tutorial label" unique_id=904820996]
 transform = Transform3D(0.9784042, 0, 0.20670107, 0, 1, 0, -0.20670107, 0, 0.9784042, -3.184125, 1.0698454, -13.536593)
-text = "If grey objects fall off, the level resets to prevent a softlock"
+text = "If pink objects fall off, the level resets to prevent a softlock"
 
 [node name="Label3D6" type="Label3D" parent="Tutorial label" unique_id=322230940]
 transform = Transform3D(0.8965944, 0, 0.44285265, 0, 1, 0, -0.44285265, 0, 0.8965944, -2.1731372, 0.65605116, -33.323402)
@@ -166,6 +173,7 @@ text = "This is a hard game, if you fail bounce back, be resilient"
 
 [node name="NextLevel" type="MeshInstance3D" parent="." unique_id=2120684294]
 transform = Transform3D(1.1958228, 0, 0, 0, 0.09672002, 0, 0, 0, 1.027231, -0.2546065, -0.3777079, -33.84876)
+material_override = ExtResource("6_o6xl0")
 mesh = SubResource("BoxMesh_esvqh")
 surface_material_override/0 = SubResource("StandardMaterial3D_sugp2")
 script = SubResource("GDScript_0wfyh")
