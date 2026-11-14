@@ -1,16 +1,32 @@
 extends CharacterBody3D
 
 
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
+@onready var Neck = $Neck
+
+func _ready() -> void:
+	pass
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	elif event.is_action("ui_cancel"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		rotate_y(-event.relative.x * 0.01)
+		Neck.rotate_x(-event.relative.y * 0.01)
+		Neck.rotation.x = clampf(Neck.rotation.x, deg_to_rad(-90.0), deg_to_rad(90))
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
+	# Handle jump."floor_block_on_wall"
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
