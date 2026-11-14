@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://gli1i8iewvyu"]
+
+[ext_resource type="PackedScene" uid="uid://ceej0xbq7qsqx" path="res://scenes/player.tscn" id="1_f0ip2"]
+[ext_resource type="PackedScene" uid="uid://pxuus3v22yxr" path="res://scenes/box.tscn" id="2_yesqi"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yesqi"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qyetb"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="GDScript" id="GDScript_yesqi"]
+script/source = "extends Node3D
+@onready var player = get_node(\"../CharacterBody3D\")
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_area_3d_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
+	get_tree().reload_current_scene()
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qyetb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f0ip2"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_m7ahb"]
+sky_material = SubResource("ProceduralSkyMaterial_f0ip2")
+
+[sub_resource type="Environment" id="Environment_yesqi"]
+background_mode = 2
+sky = SubResource("Sky_m7ahb")
+glow_enabled = true
+
+[node name="Node3D" type="Node3D" unique_id=91753206]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1001818987]
+transform = Transform3D(2.8278234, 0, 0, 0, 1, 0, 0, 0, 5.1967196, 0, 0, -4.0545053)
+mesh = SubResource("PlaneMesh_yesqi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1186614009]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1726112130]
+shape = SubResource("ConcavePolygonShape3D_qyetb")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=484436374]
+transform = Transform3D(2.8278234, 0, 0, 0, 1, 0, 0, 0, 5.1967196, 0, 0, -36.672905)
+mesh = SubResource("PlaneMesh_yesqi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3" unique_id=1585739439]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D" unique_id=1716552689]
+shape = SubResource("ConcavePolygonShape3D_qyetb")
+
+[node name="oobhandler" type="Node3D" parent="MeshInstance3D3" unique_id=2007551611]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.692173, -23.666458)
+script = SubResource("GDScript_yesqi")
+
+[node name="Area3D" type="Area3D" parent="MeshInstance3D3/oobhandler" unique_id=1154207453]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/oobhandler/Area3D" unique_id=1798751739]
+transform = Transform3D(51.843594, 0, 0, 0, 1, 0, 0, 0, 159.42442, 0, -5.292231, 0)
+shape = SubResource("BoxShape3D_qyetb")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1381218997]
+transform = Transform3D(2.8278236, 0, 0, 0, 0.86614794, -2.5972564, 0, 0.49978775, 4.5011287, 0, 0, -8.968608)
+mesh = SubResource("PlaneMesh_yesqi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=1620156958]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=280239664]
+shape = SubResource("ConcavePolygonShape3D_qyetb")
+
+[node name="CharacterBody3D" parent="." unique_id=1440422813 instance=ExtResource("1_f0ip2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.912001, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=292563158]
+environment = SubResource("Environment_yesqi")
+
+[node name="Box" parent="WorldEnvironment" unique_id=1108091245 instance=ExtResource("2_yesqi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.568073, -5.425291)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=772147494]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[connection signal="body_shape_entered" from="MeshInstance3D3/oobhandler/Area3D" to="MeshInstance3D3/oobhandler" method="_on_area_3d_body_shape_entered"]
