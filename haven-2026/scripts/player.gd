@@ -10,12 +10,13 @@ const JUMP_VELOCITY = 4.5
 @onready var Dash = $DashTimer
 @onready var DashMove = $DashMoveTimer
 var is_dash_timedout = false
-
+var time = 0
 @onready var DashAudio = $Neck/Dash_sfx
 @onready var JumpAudio = $Neck/Jump_sfx
-
+@onready var TimeDisplay = $Label
+@onready var Winlabel = $Winlabel
 func _ready() -> void:
-	pass
+	Winlabel.visible = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -77,3 +78,8 @@ func _on_dash_timer_timeout() -> void:
 func _on_dash_move_timer_timeout() -> void:
 	SPEED = SPEED_ORIGINAL
 	print("boost removed")
+
+
+func _on_timer_timeout() -> void:
+	time += 1
+	TimeDisplay.text = "Time: %s" % time
