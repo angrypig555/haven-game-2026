@@ -39,8 +39,17 @@ size = Vector3(0.8173828, 6.46344, 0.98757935)
 [sub_resource type="BoxMesh" id="BoxMesh_2k3dv"]
 size = Vector3(0.8173828, 2.2144928, 0.98757935)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tbgi4"]
+albedo_color = Color(1, 1, 0, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_76toy"]
 size = Vector3(1.987793, 2.122898, 0.90541077)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sugp2"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jyhfs"]
+albedo_color = Color(1, 1, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yqkch"]
 size = Vector3(0.7529297, 0.93078613, 0.9289551)
@@ -130,6 +139,7 @@ shape = SubResource("BoxShape3D_xa7n4")
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="Node" unique_id=1138233782]
 transform = Transform3D(-1.9057626e-07, 0, -5.9001822, 0, 0.9987147, 0, 4.3598776, 0, -2.5790519e-07, 2.787366, 0.6062571, 4.371488)
 mesh = SubResource("BoxMesh_2k3dv")
+surface_material_override/0 = SubResource("StandardMaterial3D_tbgi4")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node/MeshInstance3D9" unique_id=1337687044]
 
@@ -140,6 +150,7 @@ shape = SubResource("BoxShape3D_xa7n4")
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Node" unique_id=523824804]
 transform = Transform3D(-0.9987147, 0, 9.360882e-07, 0, 0.99871457, 0, -8.7310404e-08, 0, -10.707601, -4.3873467, 0.5607269, -1.5545707)
 mesh = SubResource("BoxMesh_76toy")
+surface_material_override/0 = SubResource("StandardMaterial3D_sugp2")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node/MeshInstance3D4" unique_id=1073175222]
 
@@ -150,6 +161,7 @@ shape = SubResource("BoxShape3D_xa7n4")
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Node" unique_id=924138137]
 transform = Transform3D(-0.9987147, 0, 9.360882e-07, 0, 0.99871457, 0, -8.7310404e-08, 0, -10.707601, 4.681441e-08, 1.654432, -2.0904944)
 mesh = SubResource("BoxMesh_76toy")
+surface_material_override/0 = SubResource("StandardMaterial3D_jyhfs")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Node/MeshInstance3D6" unique_id=1116658814]
 
