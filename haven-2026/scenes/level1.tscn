@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cf7f5o0e7xjsu"]
 
 [ext_resource type="PackedScene" uid="uid://ceej0xbq7qsqx" path="res://scenes/player.tscn" id="1_g2h75"]
+[ext_resource type="PackedScene" uid="uid://pxuus3v22yxr" path="res://scenes/box.tscn" id="2_wwpf4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wwpf4"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -23,6 +24,26 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_g2h75"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="GDScript" id="GDScript_dwgg1"]
+script/source = "extends Node3D
+@onready var player = get_node(\"../CharacterBody3D\")
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_area_3d_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
+	get_tree().reload_current_scene()
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rb6tl"]
 
 [node name="Level1" type="Node3D" unique_id=695464244]
 
@@ -70,7 +91,7 @@ mesh = SubResource("PlaneMesh_esvqh")
 shape = SubResource("ConcavePolygonShape3D_ru4tf")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1444355449]
-transform = Transform3D(2.8278239, 0, 0, 0, 1, 0, 0, 0, 5.1967206, 0, 1.6008937, -47.40208)
+transform = Transform3D(2.8278239, 0, 0, 0, 1, 0, 0, 0, 5.1967206, 0.016187608, 1.5807962, -47.398167)
 mesh = SubResource("PlaneMesh_esvqh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D5" unique_id=869383180]
@@ -78,14 +99,38 @@ mesh = SubResource("PlaneMesh_esvqh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D" unique_id=1295339974]
 shape = SubResource("ConcavePolygonShape3D_ru4tf")
 
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=1203762219]
+transform = Transform3D(2.8278239, 0, 0, 0, 1, 0, 0, 0, 5.1967206, 0, 3.442284, -58.720863)
+mesh = SubResource("PlaneMesh_esvqh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D7" unique_id=506155758]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D7/StaticBody3D" unique_id=535013655]
+shape = SubResource("ConcavePolygonShape3D_ru4tf")
+
 [node name="CharacterBody3D" parent="." unique_id=1440422813 instance=ExtResource("1_g2h75")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06494886, 0.62103945, -0.0651387)
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=934642685]
-transform = Transform3D(5.730708, 0, 0, 0, 2.690867, 0, 0, 0, 1, 0, 2.813955, -53.105373)
+transform = Transform3D(5.730708, 0, 0, 0, 2.690867, 0, 0, 0, 1, 0, 2.1152995, -53.105373)
 mesh = SubResource("BoxMesh_esvqh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D6" unique_id=2042806723]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D6/StaticBody3D" unique_id=2085041130]
 shape = SubResource("ConcavePolygonShape3D_g2h75")
+
+[node name="Box" parent="." unique_id=1108091245 instance=ExtResource("2_wwpf4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5237839, 2.3501768, -51.034336)
+
+[node name="oobhandler" type="Node3D" parent="." unique_id=601765900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.692173, -23.666458)
+script = SubResource("GDScript_dwgg1")
+
+[node name="Area3D" type="Area3D" parent="oobhandler" unique_id=703490071]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="oobhandler/Area3D" unique_id=298664083]
+transform = Transform3D(51.843594, 0, 0, 0, 1, 0, 0, 0, 159.42442, 0, -5.292231, 0)
+shape = SubResource("BoxShape3D_rb6tl")
+
+[connection signal="body_shape_entered" from="oobhandler/Area3D" to="oobhandler" method="_on_area_3d_body_shape_entered"]

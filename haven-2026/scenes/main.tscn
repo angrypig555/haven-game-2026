@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://7hgx141oqa4l" path="res://scripts/oobhandler.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://ceej0xbq7qsqx" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://pxuus3v22yxr" path="res://scenes/box.tscn" id="3_sugp2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rb6tl"]
 
@@ -129,6 +130,10 @@ text = "Press space to jump"
 transform = Transform3D(0.99999803, 0, 0.0019401014, 0, 1, 0, -0.0019401014, 0, 0.99999803, -0.5505781, 1.6182942, -14.812931)
 text = "Jump, then press shift midair to dash"
 
+[node name="Label3D7" type="Label3D" parent="Tutorial label" unique_id=973055449]
+transform = Transform3D(0.99999803, 0, 0.0019401014, 0, 1, 0, -0.0019401014, 0, 0.99999803, -2.82971, 1.3363063, -9.152144)
+text = "Grey objects can be pushed"
+
 [node name="Label3D6" type="Label3D" parent="Tutorial label" unique_id=322230940]
 transform = Transform3D(0.8965944, 0, 0.44285265, 0, 1, 0, -0.44285265, 0, 0.8965944, -2.1731372, 0.65605116, -33.323402)
 text = "Step on the blue square to go to the next level"
@@ -153,6 +158,9 @@ shape = SubResource("ConcavePolygonShape3D_0wfyh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NextLevel/Area3D" unique_id=964656681]
 transform = Transform3D(0.99999976, 0, 0, 0, 6.8407617, 0, 0, 0, 0.9999996, 0, 6.591281, 0)
 shape = SubResource("BoxShape3D_esvqh")
+
+[node name="Box" parent="." unique_id=1108091245 instance=ExtResource("3_sugp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8584948, 0.07474494, -9.380767)
 
 [connection signal="body_shape_entered" from="oobhandler/Area3D" to="oobhandler" method="_on_area_3d_body_shape_entered"]
 [connection signal="body_shape_entered" from="NextLevel/Area3D" to="NextLevel" method="_on_area_3d_body_shape_entered"]

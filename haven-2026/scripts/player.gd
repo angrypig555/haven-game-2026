@@ -4,6 +4,7 @@ extends CharacterBody3D
 const SPEED_ORIGINAL = 5.0
 var SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+@export var push_force = 10
 
 @onready var Neck = $Neck
 @onready var Dash = $DashTimer
@@ -56,7 +57,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+	
+	# deal with moving rigidbodies
+	for i in get_slide_collision_count():
+		var c = get_slide_collision(i)
+		if c.get_collider() is RigidBody3D:
+			c.get_collider().apply_central_impulse(-c.get_normal() * push_force)
+	
 	move_and_slide()
 
 
