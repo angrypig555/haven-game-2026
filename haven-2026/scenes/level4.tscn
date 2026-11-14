@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://c2u2n03r4wo6v"]
 
+[ext_resource type="Material" uid="uid://dqb2m2v7xxvnw" path="res://assets/tile.tres" id="1_8y2od"]
 [ext_resource type="PackedScene" uid="uid://ceej0xbq7qsqx" path="res://scenes/player.tscn" id="1_nsmo0"]
 [ext_resource type="PackedScene" uid="uid://pxuus3v22yxr" path="res://scenes/box.tscn" id="2_8y2od"]
+[ext_resource type="Material" uid="uid://j57ubpk5em3k" path="res://assets/tile_blue.tres" id="4_u23xw"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g1tnb"]
 
@@ -82,6 +84,7 @@ glow_enabled = true
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1307644259]
 transform = Transform3D(2.8278234, 0, 0, 0, 1, 0, 0, 0, 5.1967196, 0, 6.0803328, -24.783436)
+material_override = ExtResource("1_8y2od")
 mesh = SubResource("PlaneMesh_g1tnb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3" unique_id=329361014]
@@ -112,6 +115,7 @@ shadow_enabled = true
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=353013288]
 transform = Transform3D(17.05706, 0, 0, 0, 0.09406763, 0, 0, 0, 31.040298, 0, -0.50518763, 0)
+material_override = ExtResource("1_8y2od")
 mesh = SubResource("BoxMesh_b4lsh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4" unique_id=432953563]
@@ -122,6 +126,7 @@ shape = SubResource("ConcavePolygonShape3D_yxclo")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=504850465]
 transform = Transform3D(17.05706, 0, 0, 0, 2.4396484, 0, 0, 0, 2.049577, 0, 0.7511605, -15.899505)
+material_override = ExtResource("1_8y2od")
 mesh = SubResource("BoxMesh_b4lsh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D6" unique_id=2002103232]
@@ -133,6 +138,7 @@ shape = SubResource("BoxShape3D_7ln0b")
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="." unique_id=597764084]
 transform = Transform3D(17.05706, 0, 0, 0, 2.4396484, 0, 0, 0, 2.049577, 0, 0.7511605, -17.059486)
+material_override = ExtResource("1_8y2od")
 mesh = SubResource("BoxMesh_b4lsh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D12" unique_id=1211104410]
@@ -144,6 +150,7 @@ shape = SubResource("BoxShape3D_7ln0b")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="." unique_id=840024817]
 transform = Transform3D(17.05706, 0, 0, 0, 2.4396484, 0, 0, 0, 2.049577, 0, 2.704238, -18.904125)
+material_override = ExtResource("1_8y2od")
 mesh = SubResource("BoxMesh_b4lsh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D8" unique_id=1108275190]
@@ -155,6 +162,7 @@ shape = SubResource("BoxShape3D_7ln0b")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="." unique_id=1617233352]
 transform = Transform3D(17.05706, 0, 0, 0, 2.4396484, 0, 0, 0, 2.049577, -3.600447, 4.8391175, -18.956764)
+material_override = ExtResource("1_8y2od")
 mesh = SubResource("BoxMesh_b4lsh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D11" unique_id=626673044]
@@ -166,6 +174,7 @@ shape = SubResource("BoxShape3D_7ln0b")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=1176778096]
 transform = Transform3D(-1.4512855e-07, -0.01692594, -7.421078, 2.6118501e-08, 0.054610565, -2.3000793, 3.3734937, -1.1509683e-09, -3.0144892e-07, -1.7264829, 0.7082344, -13.428516)
+material_override = ExtResource("1_8y2od")
 mesh = SubResource("BoxMesh_b4lsh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D5" unique_id=778188458]
@@ -176,6 +185,7 @@ shape = SubResource("ConcavePolygonShape3D_yxclo")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="." unique_id=2122670790]
 transform = Transform3D(-1.4746011e-07, 0, -7.7693477, 0, 0.057173427, 0, 3.3734941, 0, -3.3960896e-07, 5.8532853, 1.9341972, -13.428516)
+material_override = ExtResource("1_8y2od")
 mesh = SubResource("BoxMesh_b4lsh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D7" unique_id=2080275610]
@@ -186,6 +196,7 @@ shape = SubResource("ConcavePolygonShape3D_yxclo")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="." unique_id=1708642100]
 transform = Transform3D(-1.4979162e-07, 0.01667853, 7.0710907, 2.6118514e-08, 0.053812314, -2.1916046, -3.3734941, -3.2393863e-10, -3.309422e-07, -1.0139143, 2.84167, -16.646143)
+material_override = ExtResource("1_8y2od")
 mesh = SubResource("BoxMesh_b4lsh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D9" unique_id=398783972]
@@ -196,6 +207,7 @@ shape = SubResource("ConcavePolygonShape3D_yxclo")
 
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="." unique_id=76513998]
 transform = Transform3D(-1.474601e-07, 0, 7.769347, 0, 0.057173427, 0, -3.3734941, 0, -3.3960896e-07, -8.242284, 3.9328036, -16.646143)
+material_override = ExtResource("1_8y2od")
 mesh = SubResource("BoxMesh_b4lsh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D10" unique_id=681002799]
@@ -205,7 +217,8 @@ transform = Transform3D(0.50486755, 0, 0, 0, 25.6, 0, 0, 0, 0.49983266, 0, 0, 1.
 shape = SubResource("ConcavePolygonShape3D_yxclo")
 
 [node name="NextLevel" type="MeshInstance3D" parent="." unique_id=2099721137]
-transform = Transform3D(6.3554497, 0, 0, 0, 0.09672002, 0, 0, 0, 1.027231, 0.066226244, 5.810707, -25.98605)
+transform = Transform3D(6.3554497, 0, 0, 0, 0.09672002, 0, 0, 0, 1.027231, 0.066226244, 6.0904236, -25.98605)
+material_override = ExtResource("4_u23xw")
 mesh = SubResource("BoxMesh_fx4lf")
 surface_material_override/0 = SubResource("StandardMaterial3D_sx4db")
 script = SubResource("GDScript_7lf1v")
@@ -221,18 +234,18 @@ shape = SubResource("ConcavePolygonShape3D_dguho")
 transform = Transform3D(0.99999976, 0, 0, 0, 1.7420573, 0, 0, 0, 0.9999988, 0, 61.585945, 12.776459)
 shape = SubResource("BoxShape3D_p2trt")
 
-[node name="Label3D5" type="Label3D" parent="NextLevel/Area3D/CollisionShape3D" unique_id=587254224]
-transform = Transform3D(0.2670027, 0, -0.25660634, 0, 8.031205, 0, 0.06956581, 0, 0.98488843, 0.029547974, -65.812546, 9.06386)
-text = "Tip: be careful with this block.
-its very pushy.
-"
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2146031313]
 environment = SubResource("Environment_gmhuy")
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=1974429077]
 transform = Transform3D(-0.9978076, -0.055941734, 0.0353626, 0, -0.5343276, -0.8452775, -0.0661815, 0.8434243, -0.5331561, 0, 0.7511605, 3.7856455)
 shadow_enabled = true
+
+[node name="Label3D5" type="Label3D" parent="." unique_id=587254224]
+transform = Transform3D(1.6969218, 0, -1.6308483, 0, 1.3531923, 0, 0.071460076, 0, 1.0117067, 0.25401688, 0.6784258, -3.5510082)
+text = "Tip: be careful with this block.
+its very pushy.
+"
 
 [connection signal="body_shape_entered" from="MeshInstance3D3/oobhandler/Area3D" to="MeshInstance3D3/oobhandler" method="_on_area_3d_body_shape_entered"]
 [connection signal="body_shape_entered" from="NextLevel/Area3D" to="NextLevel" method="_on_area_3d_body_shape_entered"]
