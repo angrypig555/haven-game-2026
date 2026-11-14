@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://7hgx141oqa4l" path="res://scripts/oobhandler.gd" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://ceej0xbq7qsqx" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://ccbvh48swjru6" path="res://assets/tile.png" id="2_jyhfs"]
+[ext_resource type="Material" uid="uid://dqb2m2v7xxvnw" path="res://assets/tile.tres" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://pxuus3v22yxr" path="res://scenes/box.tscn" id="3_sugp2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rb6tl"]
@@ -94,6 +95,7 @@ shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=750751709]
 transform = Transform3D(10.769037, 0, 0, 0, 0.09406763, 0, 0, 0, 31.040298, 0, -0.50518763, 0)
+material_override = ExtResource("2_tbgi4")
 mesh = SubResource("BoxMesh_sugp2")
 surface_material_override/0 = SubResource("StandardMaterial3D_ms1t0")
 
@@ -105,6 +107,7 @@ shape = SubResource("ConcavePolygonShape3D_sgp6g")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1783715866]
 transform = Transform3D(10.769037, 0, 0, 0, 0.09406763, 0, 0, 0, 11.758159, 0, -0.50518763, -28.907654)
+material_override = ExtResource("2_tbgi4")
 mesh = SubResource("BoxMesh_sugp2")
 surface_material_override/0 = SubResource("StandardMaterial3D_tbgi4")
 
