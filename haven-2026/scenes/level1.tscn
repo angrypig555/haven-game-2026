@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ceej0xbq7qsqx" path="res://scenes/player.tscn" id="1_g2h75"]
 [ext_resource type="Material" uid="uid://dqb2m2v7xxvnw" path="res://assets/tile.tres" id="1_m7ahb"]
+[ext_resource type="Script" uid="uid://bg0532axeyu8u" path="res://scripts/level1.gd" id="1_ru4tf"]
 [ext_resource type="PackedScene" uid="uid://pxuus3v22yxr" path="res://scenes/box.tscn" id="2_wwpf4"]
 [ext_resource type="Material" uid="uid://j57ubpk5em3k" path="res://assets/tile_blue.tres" id="4_dwgg1"]
 
@@ -79,6 +80,10 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 [sub_resource type="BoxShape3D" id="BoxShape3D_ejswk"]
 
 [node name="Level1" type="Node3D" unique_id=695464244]
+script = ExtResource("1_ru4tf")
+chapter = "1"
+level = "1"
+text = "Physics"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1157603750]
 environment = SubResource("Environment_dwgg1")
@@ -191,5 +196,6 @@ shape = SubResource("ConcavePolygonShape3D_6sh32")
 transform = Transform3D(0.99999976, 0, 0, 0, 6.8407617, 0, 0, 0, 0.9999996, 0, 6.591281, 0)
 shape = SubResource("BoxShape3D_ejswk")
 
+[connection signal="newlevel_text" from="." to="CharacterBody3D" method="_on_node_3d_newlevel_text"]
 [connection signal="body_shape_entered" from="oobhandler/Area3D" to="oobhandler" method="_on_area_3d_body_shape_entered"]
 [connection signal="body_shape_entered" from="NextLevel/Area3D" to="NextLevel" method="_on_area_3d_body_shape_entered"]

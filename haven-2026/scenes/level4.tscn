@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c2u2n03r4wo6v"]
 
 [ext_resource type="Material" uid="uid://dqb2m2v7xxvnw" path="res://assets/tile.tres" id="1_8y2od"]
+[ext_resource type="Script" uid="uid://bg0532axeyu8u" path="res://scripts/level1.gd" id="1_kq3r6"]
 [ext_resource type="PackedScene" uid="uid://ceej0xbq7qsqx" path="res://scenes/player.tscn" id="1_nsmo0"]
 [ext_resource type="PackedScene" uid="uid://pxuus3v22yxr" path="res://scenes/box.tscn" id="2_8y2od"]
 [ext_resource type="Material" uid="uid://j57ubpk5em3k" path="res://assets/tile_blue.tres" id="4_u23xw"]
@@ -81,6 +82,10 @@ sky = SubResource("Sky_m7ahb")
 glow_enabled = true
 
 [node name="Node3D" type="Node3D" unique_id=269122156]
+script = ExtResource("1_kq3r6")
+chapter = "1"
+level = "4"
+text = "Slippery slope"
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1307644259]
 transform = Transform3D(2.8278234, 0, 0, 0, 1, 0, 0, 0, 5.1967196, 0, 6.0803328, -24.783436)
@@ -247,5 +252,6 @@ text = "Tip: be careful with this block.
 its very pushy.
 "
 
+[connection signal="newlevel_text" from="." to="CharacterBody3D" method="_on_node_3d_newlevel_text"]
 [connection signal="body_shape_entered" from="MeshInstance3D3/oobhandler/Area3D" to="MeshInstance3D3/oobhandler" method="_on_area_3d_body_shape_entered"]
 [connection signal="body_shape_entered" from="NextLevel/Area3D" to="NextLevel" method="_on_area_3d_body_shape_entered"]

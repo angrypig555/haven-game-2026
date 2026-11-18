@@ -92,3 +92,17 @@ func _on_timer_timeout() -> void:
 
 func _on_node_3d_newlevel_text(chapter: Variant, level: Variant, text: Variant) -> void:
 	print("NEW LEVEL %s %s %s", chapter, level, text)
+	var nextleveltext = "%s-%s %s" % [chapter, level, text]
+	print(nextleveltext)
+	nextLevel.text = nextleveltext
+	nextLevel.visible = true
+	nextleveltimer.start()
+
+
+func _on_level_text_dissapear_timeout() -> void:
+	nextLevel.visible = false
+	print("hid nextlevel text")
+
+
+func _on_level_4_newlevel_text(chapter: Variant, level: Variant, text: Variant) -> void:
+	pass # Replace with function body.

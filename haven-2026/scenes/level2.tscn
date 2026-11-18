@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bguk8jjppadjm"]
 
+[ext_resource type="Script" uid="uid://bg0532axeyu8u" path="res://scripts/level1.gd" id="1_6ep0u"]
 [ext_resource type="PackedScene" uid="uid://ceej0xbq7qsqx" path="res://scenes/player.tscn" id="1_if4l3"]
 [ext_resource type="Script" uid="uid://7hgx141oqa4l" path="res://scripts/oobhandler.gd" id="2_4038r"]
 [ext_resource type="Material" uid="uid://dqb2m2v7xxvnw" path="res://assets/tile.tres" id="3_2k3dv"]
@@ -95,6 +96,10 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 [sub_resource type="BoxShape3D" id="BoxShape3D_76toy"]
 
 [node name="Node3D" type="Node3D" unique_id=1423746457]
+script = ExtResource("1_6ep0u")
+chapter = "1"
+level = "2"
+text = "PARKOUR"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1466029861]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -282,5 +287,6 @@ shape = SubResource("ConcavePolygonShape3D_bo4dx")
 transform = Transform3D(0.99999976, 0, 0, 0, 6.8407617, 0, 0, 0, 0.9999996, 0, 6.591281, 0)
 shape = SubResource("BoxShape3D_76toy")
 
+[connection signal="newlevel_text" from="." to="CharacterBody3D" method="_on_node_3d_newlevel_text"]
 [connection signal="body_shape_entered" from="oobhandler/Area3D" to="oobhandler" method="_on_area_3d_body_shape_entered"]
 [connection signal="body_shape_entered" from="NextLevel/Area3D" to="NextLevel" method="_on_area_3d_body_shape_entered"]

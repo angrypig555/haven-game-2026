@@ -1,7 +1,23 @@
 [gd_scene format=3 uid="uid://d0i3s43nc2vyf"]
 
+[ext_resource type="Script" uid="uid://bg0532axeyu8u" path="res://scripts/level1.gd" id="1_6vqhx"]
 [ext_resource type="Material" uid="uid://dqb2m2v7xxvnw" path="res://assets/tile.tres" id="1_yayw7"]
 [ext_resource type="Texture2D" uid="uid://ccbvh48swjru6" path="res://assets/tile.png" id="2_6vqhx"]
+[ext_resource type="PackedScene" uid="uid://ceej0xbq7qsqx" path="res://scenes/player.tscn" id="4_ay2il"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ay2il"]
+sky_top_color = Color(0, 0, 0, 1)
+sky_horizon_color = Color(0.04662216, 0.046622157, 0.046622157, 1)
+ground_bottom_color = Color(0.043039158, 0.04303915, 0.04303915, 1)
+ground_horizon_color = Color(0.04662216, 0.046622157, 0.046622157, 1)
+
+[sub_resource type="Sky" id="Sky_drtty"]
+sky_material = SubResource("ProceduralSkyMaterial_ay2il")
+
+[sub_resource type="Environment" id="Environment_1vxag"]
+background_mode = 2
+sky = SubResource("Sky_drtty")
+glow_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_ay2il"]
 
@@ -15,6 +31,14 @@ texture_filter = 0
 data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
 
 [node name="Level21" type="Node3D" unique_id=1137590048]
+script = ExtResource("1_6vqhx")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=196227854]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2075986666]
+environment = SubResource("Environment_1vxag")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=947475254]
 transform = Transform3D(10.769037, 0, 0, 0, 0.09406763, 0, 0, 0, 31.040298, 0, -0.50518763, 0)
@@ -27,3 +51,6 @@ transform = Transform3D(0.50486755, 0, 0, 0, 25.6, 0, 0, 0, 0.49983266, 0, 0, 1.
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=298336166]
 shape = SubResource("ConcavePolygonShape3D_1vxag")
+
+[node name="CharacterBody3D" parent="." unique_id=1440422813 instance=ExtResource("4_ay2il")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4206257, 2.0962458, 9.179844)
