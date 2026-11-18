@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 
+
 const SPEED_ORIGINAL = 5.0
 var SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -16,6 +17,8 @@ var time = 0
 @onready var TimeDisplay = $Label
 @onready var Winlabel = $Winlabel
 @onready var spawn_sfx = $Neck/Spawn_sfx
+@onready var nextLevel = $NextLevel
+@onready var nextleveltimer = $LevelTextDissapear
 func _ready() -> void:
 	Winlabel.visible = false
 	spawn_sfx.play()
@@ -85,3 +88,7 @@ func _on_dash_move_timer_timeout() -> void:
 func _on_timer_timeout() -> void:
 	time += 1
 	TimeDisplay.text = "Time: %s" % time
+
+
+func _on_node_3d_newlevel_text(chapter: Variant, level: Variant, text: Variant) -> void:
+	print("NEW LEVEL %s %s %s", chapter, level, text)

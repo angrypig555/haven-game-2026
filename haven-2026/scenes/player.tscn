@@ -59,6 +59,22 @@ offset_bottom = 407.0
 theme_override_font_sizes/font_size = 130
 text = "You Win!"
 
+[node name="NextLevel" type="Label" parent="." unique_id=2109093725]
+anchors_preset = -1
+anchor_top = 0.003
+anchor_bottom = 0.003
+offset_left = 410.0
+offset_top = 2.056
+offset_right = 755.0
+offset_bottom = 71.056
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 50
+text = "X-Y XYZ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelTextDissapear" type="Timer" parent="." unique_id=265880315]
+
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashMoveTimer" to="." method="_on_dash_move_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
