@@ -3,20 +3,15 @@
 [ext_resource type="Script" uid="uid://bg0532axeyu8u" path="res://scripts/level1.gd" id="1_6vqhx"]
 [ext_resource type="Material" uid="uid://dqb2m2v7xxvnw" path="res://assets/tile.tres" id="1_yayw7"]
 [ext_resource type="Texture2D" uid="uid://ccbvh48swjru6" path="res://assets/tile.png" id="2_6vqhx"]
+[ext_resource type="Material" uid="uid://b7qdbi7fbc7tg" path="res://shaders/stars.tres" id="2_drtty"]
 [ext_resource type="PackedScene" uid="uid://ceej0xbq7qsqx" path="res://scenes/player.tscn" id="4_ay2il"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ay2il"]
-sky_top_color = Color(0, 0, 0, 1)
-sky_horizon_color = Color(0.04662216, 0.046622157, 0.046622157, 1)
-ground_bottom_color = Color(0.043039158, 0.04303915, 0.04303915, 1)
-ground_horizon_color = Color(0.04662216, 0.046622157, 0.046622157, 1)
-
-[sub_resource type="Sky" id="Sky_drtty"]
-sky_material = SubResource("ProceduralSkyMaterial_ay2il")
+[sub_resource type="Sky" id="Sky_y3it0"]
+sky_material = ExtResource("2_drtty")
 
 [sub_resource type="Environment" id="Environment_1vxag"]
 background_mode = 2
-sky = SubResource("Sky_drtty")
+sky = SubResource("Sky_y3it0")
 glow_enabled = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_ay2il"]
